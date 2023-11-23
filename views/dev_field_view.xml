@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="view_dev_field_form" model="ir.ui.view">
+	        <field name="name">view.dev.field.form</field>
+	        <field name="model">dev.field</field>
+	        <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" placeholder="Name of the field Ex. name"/>
+                                <field name="f_string" placeholder="Label of the Field Ex. Name"/>
+                                <field name="is_view_tree" help="Make it true if you want show in tree view"/>
+                            </group>
+                            <group>
+                                <field name="field_type" help="Type of the Field"/>
+                                <field name="related_model" attrs="{'invisible':[('field_type','not in',('Many2one','Many2many'))],
+                                                                    'required':[('field_type','in',('Many2one','Many2many'))]}"
+                                       help="If Field is Many2many or Many2one then select related model"/>
+                            </group>
+                        </group>
+                        <group string="Attribute">
+                            <group>
+                                <field name="is_required" help="True for Make it Required"/>
+                                <field name="is_readonly" help="True for make it readonly"/>
+                                <field name="is_copy" help="True for dublicate record then pass it same"/>
+                                <field name="is_index" help="True for set index in field"/>
+                            </group>
+                            <group>
+                                <field name="default_val" help="Give the default value of the field"/>
+                                <field name="help_val" help="Help tooltip of the field"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+                   	        
+	        </field>
+        </record>
+        
+        
+        <!-- Dev Advance Salary Tree View-->
+        <record id="view_dev_field_tree" model="ir.ui.view">
+	        <field name="name">view.dev.field.tree</field>
+	        <field name="model">dev.field</field>
+	        <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="f_string"/>
+                    <field name="field_type"/>
+                    <field name="is_required"/>
+                </tree>
+                   	        
+	        </field>
+        </record>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dev_model,dev.model,model_dev_model,,1,1,1,1
+access_dev_field,dev.field,model_dev_field,,1,1,1,1
+access_dev_class,dev.model,model_dev_class,,1,1,1,1

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+        <record id="view_dev_class_form" model="ir.ui.view">
+	        <field name="name">view.dev.class.form</field>
+	        <field name="model">dev.class</field>
+	        <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="generate_module" string="Generate Module" class="btn-primary" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" plaseholder="school_management" help="used only lower later and used '_' for join two work like 'school_management'"/>
+                                <field name="nm_name"/>
+                            </group>
+                            <group>
+                                <field name="new_module" filename="nm_name" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Model Lines">
+                                <field name="model_ids"/>
+                            </page>
+                            <page string="Maifiest Files">
+                                <group>
+                                    <group>
+                                        <field name="o_name" placeholder="Name of Module" help="Module Name"/>
+                                        <field name="o_category_id" help="Select related Category of Module"/>
+                                        <field name="o_summary" placeholder="Short Description of Module" help="Give Short description of the module"/>
+                                        <field name="o_auther" placeholder="Devintelle Consulting Serices Pvt Ltd." help="Who Write this module"/>
+                                        <field name="o_website" widget="url" placeholder="devintellecs.com" help="Website of the author"/>
+                                    </group>
+                                    
+                                    <group>
+                                        <field name="depends" widget="many2many_tags" options="{'no_create': True}"/>
+                                        <field name="o_sequence" placeholder="20" help="In Which sequence module will display in module list"/>
+                                        <field name="version" help="Give the Version of the module"/>
+                                        <field name="installable" help="True For install"/>
+                                        <field name="application" help="It's show as application in module list"/>
+                                        <field name="auto_install" help="True if you want to install this module when database creation time"/>
+                                        <field name="o_data" invisible="1"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="o_desc" placeholder="Description of Module" help="Give the Full Description of the Module"/>
+                                </group>
+                                
+                            </page>
+                            <page string="Menu">
+                                <group>
+                                    <group>
+                                        <field name="top_menu_name" placeholder="Top Menu Name" help="Top Menu Name Of the Module"/>
+                                    </group>
+                                    <group>
+                                        <field name="sub_menu_name" placeholder="Sub Menu Name" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Readme">
+                                <field name="readme" pleaseholder="Readme File Description"/>
+                            </page>
+                            <page string="Contributors">
+                                <field name="contributors" pleaseholder="contributors File Description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+                   	        
+	        </field>
+        </record>
+        
+        
+        <record id="view_dev_class_tree" model="ir.ui.view">
+	        <field name="name">view.dev.class.tree</field>
+	        <field name="model">dev.class</field>
+	        <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+                   	        
+	        </field>
+        </record>
+        
+        
+        <record id="action_dev_class" model="ir.actions.act_window">
+		<field name="name">Module Structure</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">dev.class</field>
+		<field name="help">It Will Help to Create Module Structure</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+        
+
+    <menuitem name="Module Generator" id='dev_module' sequence="1"/>
+    <menuitem name="Modules" id="dev_class" parent="dev_module" sequence="1"/>
+    <menuitem name="Create Module Structure"
+            id="menu_dev_class" parent="dev_class" sequence="1" action="action_dev_class" />
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="view_dev_model_form" model="ir.ui.view">
+	        <field name="name">view.dev.model.form</field>
+	        <field name="model">dev.model</field>
+	        <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" placeholder="school.school"/>
+                                <field name="rec_name_id" domain="[('model_id','=',active_id)]" widget="selection"/>
+                            </group>
+                            <group>
+                                <field name="description" placeholder="Description of Model"/>
+                                <field name="order_id" domain="[('model_id','=',active_id)]" widget="selection"/>
+                                <field name="is_desc" attrs="{'invisible':[('order_id','=',False)]}"/>
+                                <field name="menu_name" placeholder="Model Menu Name"/>
+                            </group>
+                        </group>
+                        <field name="field_ids"/>
+                    </sheet>
+                </form>
+                   	        
+	        </field>
+        </record>
+        
+        
+        <!-- Dev Advance Salary Tree View-->
+        <record id="view_dev_model_tree" model="ir.ui.view">
+	        <field name="name">view.dev.model.tree</field>
+	        <field name="model">dev.model</field>
+	        <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="menu_name"/>
+                </tree>
+                   	        
+	        </field>
+        </record>
+        
+        
+        <!-- Dev Advance Salary Action-->
+        <record id="action_dev_model" model="ir.actions.act_window">
+		    <field name="name">Model</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">dev.model</field>
+		    <field name="help">It Will Help to Create Model of the Module</field>
+		    <field name="view_mode">tree,form</field>
+	    </record>
+	    
+	    <menuitem name="Create Models"
+            id="menu_dev_model" parent="dev_class" sequence="2" action="action_dev_model" />
+</odoo>
