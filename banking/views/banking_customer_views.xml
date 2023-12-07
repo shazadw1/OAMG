@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<odoo>
+	<!-- banking.customer Form View -->
+	<record id='devintellecs_view_banking_customer_form' model='ir.ui.view'>
+		<field name='name'>devintellecs.view.banking.customer.form</field>
+		<field name='model'>banking.customer</field>
+		<field name='priority'>16</field>
+		<field name='arch' type='xml'>
+			<form string='Customer'>
+				<sheet>
+					<group>
+						<field name='name'/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+
+	<!-- banking.customer Tree View -->
+	<record id='devintellecs_view_banking_customer_tree' model='ir.ui.view'>
+		<field name='name'>devintellecs.view.banking.customer.tree</field>
+		<field name='model'>banking.customer</field>
+		<field name='priority'>16</field>
+		<field name='arch' type='xml'>
+			<tree string='Customer'>
+				<field name='name'/>
+			</tree>
+		</field>
+	</record>
+
+
+	<!-- banking.customer Action -->
+	<record id='devintellecs_action_banking_customer' model='ir.actions.act_window'>
+		<field name='name'>banking.customer</field>
+		<field name='type'>ir.actions.act_window</field>
+		<field name='res_model'>banking.customer</field>
+		<field name='view_mode'>tree,form</field>
+	</record>
+
+	<!-- banking.customer Menu -->
+	<menuitem name="Customer" id="menu_banking_customer" parent="sub_banking_menu" action="devintellecs_action_banking_customer"/>
+
+
+
+</odoo>

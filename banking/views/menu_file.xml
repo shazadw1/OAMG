@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<odoo>
+	<menuitem name="Banking" id="top_banking_menu"/>
+	<menuitem name="Banking" id="sub_banking_menu" parent="top_banking_menu"/>
+
+</odoo>

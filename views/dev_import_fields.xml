@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_file_import_wizard" model="ir.actions.act_window">
+        <field name="name">Import File</field>
+        <field name="res_model">your.model.file_import_wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="your_module.view_file_import_wizard_form"/>
+        <field name="target">new</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+
+    <record id="view_file_import_wizard_form" model="ir.ui.view">
+        <field name="name">your.model.file_import_wizard.form</field>
+        <field name="model">your.model.file_import_wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="file" widget="binary" filename="file_name"/>
+                    <button string="Import" type="object" class="oe_highlight" name="import_file"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

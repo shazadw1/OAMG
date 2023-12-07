@@ -72,16 +72,23 @@ Module scaffold
     'installable': True,
     'application': True,
     'auto_install': False,
-    
-    #author and support Details
+    "assets": {
+        "web.assets_backend": [
+            "/OAMG-main/static/src/js/erd.js",
+        ],
+    },
+    'css': [
+        '/OAMG-main/static/src/style/main.css'
+    ],
+    # author and support Details
     'author': 'DevIntelle Consulting Service Pvt.Ltd',
-    'website': 'http://www.devintellecs.com',    
-    'maintainer': 'DevIntelle Consulting Service Pvt.Ltd', 
+    'website': 'http://www.devintellecs.com',
+    'maintainer': 'DevIntelle Consulting Service Pvt.Ltd',
     'support': 'devintelle@gmail.com',
-    'price':39.0,
-    'currency':'EUR',
-    #'live_test_url':'https://youtu.be/A5kEBboAh_k',
-    'pre_init_hook' :'pre_init_check',
+    'price': 39.0,
+    'currency': 'EUR',
+    # 'live_test_url':'https://youtu.be/A5kEBboAh_k',
+    'pre_init_hook': 'pre_init_check',
 }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

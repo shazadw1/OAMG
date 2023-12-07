@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<odoo>
+	<menuitem name="Amazon" id="top_amazon_menu"/>
+	<menuitem name="Brands" id="sub_amazon_menu" parent="top_amazon_menu"/>
+
+</odoo>
